@@ -22,5 +22,12 @@ function playRound(playerSelection, computerSelection = getComputerChoice()){
      return "You Lost! Rock beats scissors.";
     if (playerSelection == "scissors" && computerSelection == "paper")
      return "You Win! Scissors beat paper.";
-    return "Something wrong";
+    return "Something wrong with your input!";
+}
+
+function game(){
+    for (i =0; i < 5; i++){
+        playerSelection = prompt("What is your input?");
+        console.log(playRound(playerSelection, getComputerChoice()));
+    }
 }
