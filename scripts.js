@@ -9,6 +9,7 @@ function getComputerChoice() {
 }
 
 
+
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection == computerSelection) {
@@ -59,3 +60,13 @@ function displayResult(){
     else
         console.log("You tied with the computer! You both scored " + userScore + " wins." );
 }
+
+
+const result = document.querySelector('p');
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach( (button) => {
+    button.addEventListener('click', () => {
+        result.textContent = playRound(button.id.toString());
+    });
+});
